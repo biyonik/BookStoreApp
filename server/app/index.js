@@ -1,8 +1,9 @@
 const express = require('express');
 const {StatusCodes} = require("http-status-codes");
 const cors = require('cors');
-const app = express();
 const userRouter = require('../router/userRouter');
+const {connect} = require('../db');
+const app = express();
 
 // Use middleware to form our contract for incoming json payloads ONLY!
 app.use(express.json());
@@ -40,5 +41,8 @@ app.use((errorObject, requestObject, responseObject, nextFunction) => {
             }
         });
 });
+
+// Connect MongoDB
+connect();
 
 module.exports = app;
