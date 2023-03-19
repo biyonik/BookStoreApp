@@ -7,4 +7,8 @@ const connect = async () => {
         .catch((err) => console.log('Error from connect to MongoDB: ' + err));
 };
 
-module.exports = {connect};
+const disconnect = async () => {
+    await mongoose.connection.close();
+}
+
+module.exports = {connect, disconnect};
