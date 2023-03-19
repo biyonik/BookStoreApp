@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "BookStore App Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "nodemon server",
+    "devStart": "node server"
+  },
+  "keywords": [
+    "NodeJS",
+    "RestAPI"
+  ],
+  "author": "Ahmet Altun",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
