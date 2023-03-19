@@ -2,6 +2,7 @@ const express = require('express');
 const {StatusCodes} = require("http-status-codes");
 const cors = require('cors');
 const app = express();
+const userRouter = require('../router/userRouter');
 
 // Use middleware to form our contract for incoming json payloads ONLY!
 app.use(express.json());
@@ -21,7 +22,7 @@ app.get('/', (requestObject, responseObject, nextFunction) => {
 });
 
 // Routers
-// app.use('/register', registrationRouter)
+app.use('/api/v1/users', userRouter);
 
 // Bad url or error can handle with middleware
 app.use((requestObject, responseObject, nextFunction) => {
